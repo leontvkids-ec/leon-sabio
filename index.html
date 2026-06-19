@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>León Sabio</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#fff8e1;
+text-align:center;
+padding:20px;
+}
+
+h1{
+color:#d4a017;
+}
+
+.leon{
+font-size:80px;
+}
+
+textarea{
+width:90%;
+max-width:500px;
+height:100px;
+padding:10px;
+border-radius:10px;
+}
+
+button{
+background:#d4a017;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+font-size:18px;
+margin-top:10px;
+}
+
+.respuesta{
+margin-top:20px;
+padding:15px;
+background:white;
+border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="leon">🦁</div>
+
+<h1>León Sabio</h1>
+
+<p>
+Hola aventurero(a) 😀<br>
+¿Qué quieres aprender hoy?
+</p>
+
+<textarea id="pregunta"
+placeholder="Escribe tu pregunta aquí...">
+</textarea>
+
+<br>
+
+<button onclick="responder()">
+Preguntar
+</button>
+
+<div class="respuesta" id="respuesta">
+Aquí aparecerá la respuesta.
+</div>
+
+<script>
+function responder(){
+
+let pregunta =
+document.getElementById("pregunta").value;
+
+document.getElementById("respuesta").innerHTML=
+"🦁 Gracias por tu pregunta: <br><b>"
++ pregunta +
+"</b><br><br>Pronto León Sabio responderá aquí.";
+}
+</script>
+
+</body>
+</html>
