@@ -77,14 +77,38 @@ Aquí aparecerá la respuesta.
 function responder(){
 
 let pregunta =
-document.getElementById("pregunta").value;
+document.getElementById("pregunta").value.toLowerCase();
 
-document.getElementById("respuesta").innerHTML=
-"🦁 Gracias por tu pregunta: <br><b>"
-+ pregunta +
-"</b><br><br>Pronto León Sabio responderá aquí.";
+let respuesta="";
+
+if(pregunta.includes("hola")){
+respuesta="🦁 ¡Hola! Me alegra verte. ¿Qué quieres aprender hoy?";
 }
-</script>
 
-</body>
-</html>
+else if(pregunta.includes("gracias")){
+respuesta="🦁 ¡De nada! Siempre estaré feliz de ayudarte.";
+}
+
+else if(pregunta.includes("adiós") || pregunta.includes("chao")){
+respuesta="🦁 ¡Hasta pronto! Sigue aprendiendo cada día.";
+}
+
+else{
+
+try{
+
+respuesta="🦁 La respuesta es: "+eval(pregunta);
+
+}
+
+catch{
+
+respuesta="🦁 Aún estoy aprendiendo. Muy pronto responderé esa pregunta.";
+
+}
+
+}
+
+document.getElementById("respuesta").innerHTML=respuesta;
+
+}
